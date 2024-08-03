@@ -1,4 +1,5 @@
 // https://developer.mozilla.org/es/docs/Web/JavaScript
+// https://oregoom.com/javascript/operadores/
 
 // comentario para una linea
 
