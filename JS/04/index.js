@@ -6,9 +6,14 @@ console.log(arr);
 arr.push(10);
 arr.push(11);
 console.log(arr);
-
+//agregar valor al princio
+arr.unshift(-1);
+console.log(arr);
 // eliminar el ultimo valor con pop
 arr.pop();
+console.log(arr);
+//elimina un valor al inicio
+arr.shift()
 console.log(arr);
 
 // ordenar el arreglo con sort
@@ -32,7 +37,8 @@ let numbers = [1, 2, 3]
 let doubleNumbers = numbers.map((number) => {
   return number * 2
 })
-
+console.log(numbers);
+console.log(doubleNumbers);
 //2. SET
 // No acepta duplicados
 let mySet = new Set(["Oleojake", 30]); 
@@ -72,4 +78,74 @@ console.log(myObject.edad)
 
 // Ejercicio extra
 
+console.log("\nEjercicio extra\n");
 
+function myAgenda(){
+  let agenda = new Map();
+
+  let ciclo = true;
+  while(ciclo){
+    console.log("1. buscar contacto."); 
+    console.log("2. insertar contacto."); 
+    console.log("3. actualizar contacto."); 
+    console.log("4. eliminar contacto."); 
+    console.log("5. salir.");
+    let opcion = prompt("Que opcion desea realizar? \n")
+
+
+    let name = null;
+    let phone = null;
+    let phoneInput = null;
+    
+
+    switch(opcion){
+      case "1":
+        name = prompt("ingrese nombre a buscar: ");
+        if (agenda.has(name)){
+          alert(`el contacto de ${name}, es: ${agenda.get(name)}`);
+        }else{
+          alert(`el contacto ${name}, no existe.`);
+        }
+        break;
+      case "2":
+        name = prompt("ingresa el nombre: ")
+        phoneInput = prompt("ingrese el numero de telefono: ")
+        phone = parseInt(phoneInput, 10);
+        if(Number.isInteger(phone) && phone > 0 && phoneInput.length <= 11){
+          agenda.set(name, phone);
+        }else{
+          alert("no introdujo el numero correctamente.");
+        }
+        
+        break;
+      case "3":
+        name = prompt("ingrese el contacto que desea actualizar. ");
+        phoneInput = prompt("ingrese el numero de telefono: ")
+        phone = parseInt(phoneInput, 10);
+        if(Number.isInteger(phone) && phone > 0 && phoneInput.length <= 11){
+          agenda.set(name, phone);
+        }else{
+          alert("no introdujo el numero correctamente.");
+        }
+        break;
+      case "4":
+        name = prompt("ingrese el nombre que desea eliminar. ");
+        if(agenda.has(name)){
+          agenda.delete(name);
+          alert("contacto borrado correctamente")
+        }else{
+          alert("el contacto no existe.")
+        }
+        break;
+
+      case "5":
+        alert("a seleccionado la opcion de salir del programa.");
+        ciclo = false;
+      break;
+      default:
+        alert("opcion no valida. Ingresa una opcion del 1 al 5.");
+    }
+  }
+}
+
+myAgenda();
