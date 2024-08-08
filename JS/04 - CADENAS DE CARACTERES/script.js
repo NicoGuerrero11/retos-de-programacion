@@ -262,32 +262,53 @@ console.log(Boolean(num));
 */
 
 function palabras(palabra1, palabra2){
-    
+
     // Variables
-    let trasfArr = palabra1.toLowerCase().split("").toString();
-    let trasfArrRev = trasfArr.reverse();
-    let transfArr2 = palabra2.toLowerCase().split("").toString();
-    let trasfArrRev2 = transArr2.reverse();
+    let arr1 = palabra1.toLowerCase().split("");
+    let arr2 = palabra2.toLowerCase().split("");
     
     // palindromo
+    let trasfArr = arr1.toString();
+    let trasfArrRev = arr1.reverse().toString();
+    let transfArr2 = arr2.toString();
+    let trasfArrRev2 = arr2.reverse().toString();
+
     if ( trasfArr === trasfArrRev){
         console.log(`${palabra1} es un palindromo`);
     }else{
-        console.log(`${palabra1} noun palindromo`);
+        console.log(`${palabra1} no un palindromo`);
     }
     if ( transfArr2 === trasfArrRev2){
         console.log(`${palabra2} es un palindromo`);
     }else{
-        console.log(`${palabra2} noun palindromo`);
+        console.log(`${palabra2} no un palindromo`);
     }
     
 
     // Anagrama
+    let orden1 = arr1.sort();
+    let orden2 = arr2.sort(); 
+    if (orden1.toString() === orden2.toString()){
+        console.log(`${palabra1} y ${palabra2} son anagramas`);
+    }else{
+        console.log(`${palabra1} y ${palabra2} no son anagramas`);
+    }
 
     // Isograma
     
+    function isograma(nombre){
+       let arr = nombre.toLowerCase().split('');
+       let dupli = new Set(arr);
+       if(arr.length === dupli.size){
+        console.log(`${nombre} es un isograma`);
+       }else{
+        console.log(`${nombre} no es un isograma`);
+       }
+        
+    }    
 
-
+    isograma(palabra1);
+    isograma(palabra2);
 
     
 
@@ -295,3 +316,5 @@ function palabras(palabra1, palabra2){
 }
 
 palabras("radar", "roma");
+palabras("roma", "amor")
+palabras("murcielago", "contigo")
