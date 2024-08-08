@@ -263,36 +263,28 @@ console.log(Boolean(num));
 
 function palabras(palabra1, palabra2){
 
-    // Variables
-    let arr1 = palabra1.toLowerCase().split("");
-    let arr2 = palabra2.toLowerCase().split("");
-    
     // palindromo
-    let trasfArr = arr1.toString();
-    let trasfArrRev = arr1.reverse().toString();
-    let transfArr2 = arr2.toString();
-    let trasfArrRev2 = arr2.reverse().toString();
+    function palindromo(str){
+        const rev = str.toLowerCase().split('').reverse().join('');
+        if (str === rev){
+            console.log(`${str} es un palindromo`);
+        }else{
+            console.log(`${str} no un palindromo`);
+        }
+    }
+    palindromo(palabra1);
+    palindromo(palabra2);
 
-    if ( trasfArr === trasfArrRev){
-        console.log(`${palabra1} es un palindromo`);
-    }else{
-        console.log(`${palabra1} no un palindromo`);
+    function anagrama(agr1, agr2){
+        let orden = agr1.toLowerCase().split('').sort().join('');
+        let orden2 = agr2.toLowerCase().split('').sort().join('');
+        if (orden === orden2){
+            console.log(`${agr1} y ${agr2} son anagramas`);
+        }else{
+            console.log(`${agr1} y ${agr2} no son anagramas`);
+        }
     }
-    if ( transfArr2 === trasfArrRev2){
-        console.log(`${palabra2} es un palindromo`);
-    }else{
-        console.log(`${palabra2} no un palindromo`);
-    }
-    
-
-    // Anagrama
-    let orden1 = arr1.sort();
-    let orden2 = arr2.sort(); 
-    if (orden1.toString() === orden2.toString()){
-        console.log(`${palabra1} y ${palabra2} son anagramas`);
-    }else{
-        console.log(`${palabra1} y ${palabra2} no son anagramas`);
-    }
+    anagrama(palabra1, palabra2);
 
     // Isograma
     
@@ -309,12 +301,10 @@ function palabras(palabra1, palabra2){
 
     isograma(palabra1);
     isograma(palabra2);
-
-    
-
     
 }
 
-palabras("radar", "roma");
+palabras("radar", "diverso");
 palabras("roma", "amor")
 palabras("murcielago", "contigo")
+palabras("iceman", "cinema")
