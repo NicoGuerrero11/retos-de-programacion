@@ -265,8 +265,8 @@ function palabras(palabra1, palabra2){
     
     // Variables
     let trasfArr = palabra1.toLowerCase().split("").toString();
-    let trasfArrRev = trasfArr.reverse;
-    let transArr2 = palabra2.toLowerCase().split("").toString();
+    let trasfArrRev = trasfArr.reverse();
+    let transfArr2 = palabra2.toLowerCase().split("").toString();
     let trasfArrRev2 = transArr2.reverse();
     
     // palindromo
@@ -275,7 +275,7 @@ function palabras(palabra1, palabra2){
     }else{
         console.log(`${palabra1} noun palindromo`);
     }
-    if ( trasfArr2 === trasfArrRev2){
+    if ( transfArr2 === trasfArrRev2){
         console.log(`${palabra2} es un palindromo`);
     }else{
         console.log(`${palabra2} noun palindromo`);
