@@ -89,6 +89,10 @@ class Programador extends Empleado{
     add(employee = Empleado){
         console.log(`un programador no tiene empleados, ${employee.nombre} no se agregara`);
     }
+
+    mostrarEmpleado(){
+        console.log("los programadores, no cuentan con empleados");
+    }
 }
 
 my_manager = new Gerente("Nico", 1);
@@ -115,3 +119,4 @@ my_manager.coordinar_proyectos();
 
 my_manager.mostrarEmpleado();
 my_proyect_manager.mostrarEmpleado();
+my_programmer.mostrarEmpleado();
