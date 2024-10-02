@@ -1,0 +1,10 @@
+<persona>
+  <nombre>nicolas</nombre>
+  <edad>24</edad>
+  <fechaNacimiento>08/08/2000</fechaNacimiento>
+  <lenguajes>
+    <lenguajes>javaScript</lenguajes>
+    <lenguajes>Python</lenguajes>
+    <lenguajes>Java</lenguajes>
+  </lenguajes>
+</persona>
