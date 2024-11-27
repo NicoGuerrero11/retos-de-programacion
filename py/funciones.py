@@ -146,5 +146,5 @@ def contando(a, b):
             count += 1
     return count
         
-        
+contando("fizz", "buzz")        
 
