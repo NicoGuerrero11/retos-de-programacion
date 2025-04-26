@@ -69,7 +69,6 @@ const leerYTransformarXML = () => {
     personaXML.mostrarDatos();
   });
 };
-
 const borrarArchivos = () => {
   fs.unlinkSync("datos.json");
   fs.unlinkSync("datos.xml");
